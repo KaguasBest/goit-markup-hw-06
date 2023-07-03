@@ -310,6 +310,14 @@ nav > a {
   padding: 120px 0;
 }
 
+.alternative-title {
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+}
+
 .features-list {
   gap: 24px;
 }
@@ -450,7 +458,6 @@ nav > a {
 
 .customers-title {
   margin-bottom: 72px;
-  line-height: 40px;
   line-height: 1.11;
 }
 
@@ -508,13 +515,10 @@ nav > a {
   align-items: center;
 }
 
-.portfolio-list {
+.portfolio-btn {
   gap: 24px;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.portfolio-btn {
   margin-bottom: 72px;
 }
 
@@ -550,7 +554,9 @@ nav > a {
 }
 
 .portfolio-product {
-  row-gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px 24px;
 }
 
 .product-describe {
@@ -933,6 +939,7 @@ nav > a {
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  outline: transparent;
   border: 1px solid var(--white-background, #fff);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   color: var(--white-background);
@@ -957,3 +964,360 @@ nav > a {
 }
 
 /* End Footer style */
+
+/* ____________________________________________________________________________________________________________________________________ */
+
+/* Mobile media queries */
+@media (min-width: 428px) and (max-width: 768px) {
+  .section.features,
+  .section {
+    padding: 96px 0;
+  }
+
+  .container {
+    width: 428px;
+  }
+
+  .products {
+    display: none;
+  }
+
+  .header {
+    display: none;
+  }
+
+  /* introduce queries */
+  .introduce {
+    padding: 112px 0;
+  }
+
+  .main-title {
+    font-size: 36px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.72px;
+    text-transform: capitalize;
+    margin-bottom: 72px;
+  }
+  /* introduce queries */
+
+  /* features queries */
+  .features-list {
+    flex-direction: column;
+    gap: 72px;
+  }
+
+  .features-item {
+    width: 100%;
+  }
+
+  .features-icon {
+    display: none;
+  }
+
+  .alternative-title {
+    font-size: 36px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.72px;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  /* End features queries */
+
+  /* team queries */
+  .team-list {
+    flex-direction: column;
+    gap: 72px;
+  }
+
+  .team-item {
+    width: 264px;
+    margin: 0 auto;
+  }
+
+  /* End team queries */
+
+  /* customers queries */
+
+  .customers-list {
+    flex-wrap: wrap;
+    gap: 72px 16px;
+  }
+
+  .customers-item {
+    width: calc((100% - 16px) / 2);
+  }
+
+  /* customers queries */
+
+  /* footer queries */
+  .footer {
+    padding: 96px 0;
+  }
+
+  .footer .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 72px;
+  }
+
+  .footer .link-block {
+    margin: 0 65px;
+  }
+
+  .footer-p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .link-block {
+    text-align: center;
+  }
+
+  .link-block .footer-p {
+    max-width: 268px;
+    text-align: start;
+  }
+
+  .social-block {
+    margin: 0;
+    text-align: center;
+  }
+
+  .subscribe-block {
+    width: 100%;
+    text-align: left;
+  }
+
+  .form-subscribe {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-describe-label {
+    width: 100%;
+  }
+
+  .footer-email-input {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  .footer-subscribe-btn {
+    margin: auto;
+  }
+
+  /* End footer queries */
+
+  /* portfolio queries */
+  .portfolio {
+    padding: 118px 0 48px 0;
+  }
+
+  .portfolio-product {
+    flex-direction: column;
+  }
+
+  .portfolio-btn {
+    justify-content: start;
+    gap: 16px 24px;
+  }
+
+  .portfolio-link {
+    width: 396px;
+  }
+
+  .button-filter {
+    padding: 8px 16px;
+  }
+
+  .overlay-block {
+    height: 280px;
+  }
+
+  .overlay-block > img {
+    width: 100%;
+  }
+  /* End portfolio queries */
+
+  /* modal queries */
+  .modal-window {
+    top: 40%;
+  }
+  /* End modal queries */
+}
+
+/* End Mobile media queries */
+
+/* ____________________________________________________________________________________________________________________________________ */
+
+/* Tablet media queries */
+@media (min-width: 768px) and (max-width: 1158px) {
+  .container {
+    width: 766px;
+    padding: 0 15px;
+  }
+
+  .section {
+    padding: 96px 0;
+  }
+
+  /* header queries */
+
+  .logotip {
+    margin-right: 120px;
+  }
+
+  .address > .list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header .address {
+    padding: 16px 0;
+  }
+
+  .header-addr-item > .contacts-link {
+    padding: 0;
+  }
+
+  .active::after {
+    bottom: -11px;
+  }
+
+  /* End header queries */
+
+  /* introduce queries  */
+
+  .introduce {
+    padding-top: 168px;
+  }
+  /* End introduce queries  */
+
+  /* Features queries */
+  .section.features {
+    padding: 96px 0;
+  }
+
+  .features-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .features-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .features-icon {
+    display: none;
+  }
+
+  .alternative-title {
+    font-size: 36px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.72px;
+    text-transform: capitalize;
+  }
+  /* End Features queries */
+
+  /* products queries */
+  .products {
+    display: none;
+  }
+  /* End products queries */
+
+  /* team queries */
+  .team-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 64px 24px;
+    justify-content: center;
+    text-align: center;
+    width: 552px;
+    margin: 0 auto;
+  }
+
+  .team-item {
+    width: auto;
+  }
+  /* End team queries */
+
+  /* customers queries */
+  .customers-list {
+    flex-wrap: wrap;
+    width: 552px;
+    gap: 72px 24px;
+  }
+
+  .customers-item {
+    width: calc((100% - 48px) / 3);
+  }
+  /* End customers queries */
+
+  /* footer queries */
+
+  .footer .container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 72px 24px;
+    width: 552px;
+  }
+
+  .footer .link-block,
+  .social-block {
+    margin: 0;
+  }
+
+  .link-block,
+  .footer-p {
+    text-align: start;
+  }
+
+  .subscribe-block {
+    width: auto;
+  }
+
+  .form-subscribe {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .footer-email-input {
+    width: 264px;
+    opacity: 0.3;
+  }
+
+  /* End footer queries */
+
+  /* portfolio queries */
+  .portfolio {
+    padding: 96px 0;
+  }
+
+  .portfolio-product {
+    justify-content: flex-start;
+  }
+
+  .portfolio-item {
+    width: 356px;
+  }
+  /* End portfolio queries */
+
+  /* modal queries */
+  .modal-window {
+    top: 40%;
+  }
+  /* End modal queries */
+}
+/* End Tablet media queries */
