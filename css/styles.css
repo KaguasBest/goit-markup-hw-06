@@ -632,6 +632,7 @@ nav > a {
   width: 100%;
   height: 100%;
   z-index: 999;
+
   visibility: visible;
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -646,8 +647,11 @@ nav > a {
 .modal-window {
   position: absolute;
   padding: 72px 24px 24px 24px;
-  width: 408px;
+  max-width: 408px;
   min-height: 584px;
+  max-height: calc(100% - 32px);
+  overflow-y: auto;
+
   top: 50%;
   left: 50%;
   background-color: var(--modal-window-bg);
@@ -855,14 +859,15 @@ nav > a {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 80px 40px;
+  padding: 80px 40px 35px;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  overflow-y: auto;
   background-color: var(--white-background);
   z-index: 999;
 
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-container.is-open {
@@ -882,7 +887,7 @@ nav > a {
 
 .mobile-menu .header-nav-item {
   color: inherit;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
   text-decoration: none;
 }
 
@@ -896,6 +901,7 @@ nav > a {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 
   margin: 0;
   padding: 0;
@@ -923,6 +929,14 @@ nav > a {
   fill: var(--white-background);
 }
 
+.mobile-mavigation-link,
+.mobile-contacts-link {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.72px;
+}
+
 .mobile-addr-list {
   display: flex;
   flex-direction: column;
@@ -931,18 +945,20 @@ nav > a {
 
 .mobile-social-list {
   display: flex;
-  flex-direction: row;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 20px 56px;
   justify-content: flex-start;
 }
 
 .mobile-contacts-link {
-  font-size: 36px;
   margin-bottom: 40px;
+  color: var(--primary-brand);
 }
 
 .mobile-email {
   font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 /* End Mobile section style */
@@ -1068,10 +1084,22 @@ nav > a {
 
 /* End Footer style */
 
+/* media images queries */
+@media (min-resolution: 192dpi), (min-device-pixel-ratio: 2) {
+  .introduce {
+    background: linear-gradient(to bottom, var(--bg-color), var(--bg-color)), url(../images/main-bgx2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/* End media images queries */
+
 /* ____________________________________________________________________________________________________________________________________ */
 
 /* Mobile media queries */
-@media (max-width: 428px) {
+@media (max-width: 427px) {
   .section.features,
   .section {
     padding: 96px 0;
@@ -1082,12 +1110,12 @@ nav > a {
     padding: 0 16px;
   }
 
-  .products {
-    display: none;
+  main {
+    padding-top: 70px;
   }
 
-  .navigation-link {
-    font-size: 36px;
+  .products {
+    display: none;
   }
 
   .active::after {
@@ -1241,7 +1269,7 @@ nav > a {
   }
 
   .portfolio-link {
-    width: 396px;
+    max-width: 396px;
   }
 
   .button-filter {
@@ -1259,7 +1287,9 @@ nav > a {
 
   /* modal queries */
   .modal-window {
-    top: 40%;
+    width: calc(100% - 20px);
+    padding: 72px 12px 12px;
+    min-height: 0;
   }
   /* End modal queries */
 
@@ -1269,9 +1299,8 @@ nav > a {
     display: none;
   }
 
-  .menu-container {
-    width: 100%;
-    height: 100%;
+  .menu-toggle {
+    display: flex;
   }
 
   .menu-container {
@@ -1294,7 +1323,7 @@ nav > a {
 
 /* ____________________________________________________________________________________________________________________________________ */
 /* Mobile media queries */
-@media (min-width: 429px) and (max-width: 768px) {
+@media (min-width: 428px) and (max-width: 767px) {
   .section.features,
   .section {
     padding: 96px 0;
@@ -1304,11 +1333,11 @@ nav > a {
     width: 428px;
   }
 
-  /* header queries */
-
-  .navigation-link {
-    font-size: 36px;
+  main {
+    padding-top: 70px;
   }
+
+  /* header queries */
 
   .active::after {
     display: none;
@@ -1482,7 +1511,8 @@ nav > a {
 
   /* modal queries */
   .modal-window {
-    top: 40%;
+    width: calc(100% - 36px);
+    min-height: 0;
   }
   /* End modal queries */
 
@@ -1491,6 +1521,10 @@ nav > a {
   .nav-list,
   .address {
     display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 
   .mobile-social-block > .social-list {
@@ -1503,7 +1537,7 @@ nav > a {
 /* ____________________________________________________________________________________________________________________________________ */
 
 /* Tablet media queries */
-@media (min-width: 769px) and (max-width: 1158px) {
+@media (min-width: 768px) and (max-width: 1158px) {
   .container {
     width: 766px;
     padding: 0 15px;
@@ -1616,7 +1650,7 @@ nav > a {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 72px 24px;
-    width: 552px;
+    max-width: 552px;
   }
 
   .footer .link-block,
@@ -1660,9 +1694,6 @@ nav > a {
   /* End portfolio queries */
 
   /* modal queries */
-  .modal-window {
-    top: 40%;
-  }
   /* End modal queries */
 
   .menu-toggle {
@@ -1671,6 +1702,10 @@ nav > a {
 
   .humb-icon {
     stroke: var(--dark);
+  }
+
+  .modal-window {
+    min-height: 0;
   }
 }
 
